@@ -43,12 +43,18 @@ annotate studentDB.Books with @(
         {
             Value: author
         },
+        {
+            Value: description
+        }
     ],
      UI.FieldGroup #Books : {
         $Type : 'UI.FieldGroupType',
         Data : [
             {
                 Value : code,
+            },
+            {
+                Value: author,
             },
             {
                 Value : description,
@@ -159,7 +165,7 @@ annotate studentDB.Courses with @(
         },
         {
             Label: 'Books',
-            Value : Books.book.code
+            Value : Books.book.description
         },
     ],
     UI.FieldGroup #CourseInformation : {
@@ -241,6 +247,9 @@ annotate studentDB.Student with @(
         {
             Value : course.code
         },
+        {
+            Value: is_alumni
+        },
     ],
     UI.SelectionFields: [ stid, fname, lname, email, pan_no, dob, age],       
     UI.FieldGroup #StudentInformation : {
@@ -278,7 +287,7 @@ annotate studentDB.Student with @(
             {
                 $Type: 'UI.DataField',
                 Value: course_ID
-            }
+            },
         ],
     },
     UI.Facets : [
@@ -388,6 +397,10 @@ annotate studentDB.Courses.Books with {
                 {
                     $Type             : 'Common.ValueListParameterDisplayOnly',
                     ValueListProperty : 'code'
+                },
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'author'
                 },
                 {
                     $Type             : 'Common.ValueListParameterDisplayOnly',

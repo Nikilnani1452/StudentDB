@@ -1,7 +1,7 @@
 {
   "_version": "1.59.0",
   "sap.app": {
-    "id": "student",
+    "id": "studentdb",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
       "version": "1.12.2",
-      "toolsId": "ef3d4a9d-5f42-491f-aaeb-d7c80edd1538"
+      "toolsId": "e4cbecbb-2c38-41fb-8452-18ff37c7b062"
     },
     "dataSources": {
       "mainService": {
@@ -45,7 +45,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.120.4",
+      "minUI5Version": "1.120.6",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -61,7 +61,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "student.i18n.i18n"
+          "bundleName": "studentdb.i18n.i18n"
         }
       },
       "": {
@@ -83,6 +83,7 @@
       "css": []
     },
     "routing": {
+      "config": {},
       "routes": [
         {
           "pattern": ":?query:",
@@ -102,33 +103,12 @@
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "initialLoad": "Enabled",
               "contextPath": "/Student",
               "variantManagement": "Page",
               "navigation": {
                 "Student": {
                   "detail": {
                     "route": "StudentObjectPage"
-                  }
-                }
-              },
-              "controlConfiguration": {
-                "@com.sap.vocabularies.UI.v1.LineItem": {
-                  "actions": {
-                    "StudentListExt": {
-                      "press": "student.ext.studentListExt.StudentListExt.SetAlumni",
-                      "visible": true,
-                      "enabled": true,
-                      "requiresSelection": true,
-                      "text": "Set Alumni"
-                    },
-                    "StudentListExt2": {
-                      "press": "student.ext.studentListExt.StudentListExt.SetStudent",
-                      "visible": true,
-                      "enabled": true,
-                      "requiresSelection": true,
-                      "text": "Set Student"
-                    }
                   }
                 }
               }

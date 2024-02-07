@@ -29,6 +29,8 @@ entity Student: cuid, managed {
     }
     @title: 'Age'
     virtual age: Integer @Core.Computed;
+    @title: 'Is Alumni'
+    is_alumni: Boolean default false;
 }
 
 @cds.persistence.skip
@@ -61,6 +63,8 @@ entity Languages: cuid, managed {
 entity Books: cuid, managed {
     @title: 'Name'
     code: String(30);
+    @title: 'Author'
+    author: String(30);
     @title: 'Description'
     description: String(100);
 }

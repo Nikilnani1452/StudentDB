@@ -1,5 +1,5 @@
 {
-  "name": "timepass",
+  "name": "StudentDB",
   "version": "1.0.0",
   "description": "A simple CAP project.",
   "repository": "<Add your repository here>",
@@ -10,15 +10,20 @@
     "express": "^4"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^1.4.0",
-    "@sap/ux-specification": "^1.120.2"
+    "@cap-js/sqlite": "^1",
+    "@sap/ux-specification": "^1.120.3"
   },
   "scripts": {
     "start": "cds-serve",
     "watch-student": "cds watch --open student/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-courses": "cds watch --open courses/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-courses": "cds watch --open courses/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-studentdb": "cds watch --open studentdb/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
+    "fiori": {
+      "lean_draft": true,
+      "bypass_draft": true
+    },
     "requires": {
       "db": {
         "kind": "sqlite",
@@ -30,6 +35,7 @@
   },
   "sapux": [
     "app/student",
-    "app/courses"
+    "app/courses",
+    "app/studentdb"
   ]
 }
